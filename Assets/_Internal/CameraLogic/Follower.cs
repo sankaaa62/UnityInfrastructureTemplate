@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Internal.Infrastructure.CameraLogic
+namespace _Internal.CameraLogic
 {
     public class Follower : MonoBehaviour
     {

@@ -1,23 +1,16 @@
 ﻿using _Internal.Infrastructure.Services.Input;
-using UnityEngine;
+using _Internal.Logic;
 
 namespace _Internal.Infrastructure
 {
     public class Game
     {
         public static IInputService InputService;
+        public GameStateMachine StateMachine;
 
-        public Game()
+        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain)
         {
-            RegisterInputService();
-        }
-
-        private static void RegisterInputService()
-        {
-            if (Application.isEditor)
-                InputService = new StandaloneInputService();
-            else
-                InputService = new MobileInputService();
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), loadingCurtain);
         }
     }
 }

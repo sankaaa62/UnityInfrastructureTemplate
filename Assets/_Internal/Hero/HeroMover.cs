@@ -1,5 +1,4 @@
 using _Internal.Infrastructure;
-using _Internal.Infrastructure.CameraLogic;
 using _Internal.Infrastructure.Services.Input;
 using UnityEngine;
 
@@ -20,7 +19,7 @@ namespace _Internal.Hero
 
         private void Start()
         {
-            AttachCamera();
+            _camera = Camera.main;
         }
 
         private void Update()
@@ -43,12 +42,6 @@ namespace _Internal.Hero
 
             movementVector += Physics.gravity;
             CharacterController.Move(MovementSpeed * movementVector * Time.deltaTime);
-        }
-
-        private void AttachCamera()
-        {
-            _camera = Camera.main;
-            _camera.GetComponent<Follower>().Target = transform;
         }
     }
 }
