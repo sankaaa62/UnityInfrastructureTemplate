@@ -1,3 +1,5 @@
+using _Internal.Infrastructure.Services;
+using _Internal.Infrastructure.States;
 using _Internal.Logic;
 using UnityEngine;
 
@@ -11,7 +13,7 @@ namespace _Internal.Infrastructure
 
         private void Awake()
         {
-            _game = new Game(this, LoadingCurtain);
+            _game = new Game(this, LoadingCurtain, AllServices.Container);
             _game.StateMachine.Enter<BootstrapState>();
 
             DontDestroyOnLoad(this);

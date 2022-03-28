@@ -1,4 +1,4 @@
-﻿namespace _Internal.Infrastructure
+﻿namespace _Internal.Infrastructure.States
 {
     public interface IExitableState
     {

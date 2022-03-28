@@ -1,4 +1,4 @@
-using _Internal.Infrastructure;
+using _Internal.Infrastructure.Services;
 using _Internal.Infrastructure.Services.Input;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ namespace _Internal.Hero
 
         private void Awake()
         {
-            _inputService = Game.InputService;
+            _inputService = AllServices.Container.Single<IInputService>();
         }
 
         private void Start()
